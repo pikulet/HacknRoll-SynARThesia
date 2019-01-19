@@ -1,3 +1,5 @@
+const canvas_id = "canvas-id";
+
 function randomize_x() {
   return Math.floor(Math.random() * 800) - 50;
 }
@@ -6,31 +8,36 @@ function randomize_y() {
   return Math.floor(Math.random() * 400) - 50;
 }
 
-function getImageSourceFromLetter(letter) {
+function getImageSourceFromLetterAndTime(letter, time) {
   var image_file_array = ['one_blob.png'];
   //var note_value = (letters.charCodeAt()%10) ;
   return "IMAGES/" + image_file_array[0];
 }
 
-function getXFromLetter(letter) {
+function getXFromLetterAndTime(letter, time) {
   return randomize_x();
 }
 
-function getYFromLetter(letter) {
+function getYFromLetterAndTime(letter, time) {
   return randomize_y();
 }
 
-function paintSplat(letter, canvas_id) {
+function getImageSizeFromLetterAndTime(letter, time) {
+  return 137;
+}
+
+function paintSplat(letter, time) {
   letter = letter.toLowerCase();
 
-  var imgSrc = getImageSourceFromLetter(letter);
-  var imgX = getXFromLetter(letter);
-  var imgY = getXFromLetter(letter);
+  var imgSrc = getImageSourceFromLetterAndTime(letter, time);
+  var imgX = getXFromLetterAndTime(letter, time);
+  var imgY = getYFromLetterAndTime(letter, time);
+  var imgSize = getImageSizeFromLetterAndTime(letter, time);
 
   var imageObj = new Image();
   imageObj.onload = function() {
     var context = document.getElementById(canvas_id).getContext('2d');
-    context.drawImage(imageObj, imgX, imgY, 137, 137);
+    context.drawImage(imageObj, imgX, imgY, 137, imgSize);
   };
   imageObj.src = imgSrc;
 }
