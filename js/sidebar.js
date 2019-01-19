@@ -21,6 +21,8 @@ function refresh() {
   playing = false;
   firstNotePlayed = false;
 
+  clearCanvas();
+  
   $('#song').text('your song: ');
   document.getElementById('song').style.color = "black";
 }
