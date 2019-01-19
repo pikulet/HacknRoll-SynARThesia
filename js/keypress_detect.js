@@ -39,10 +39,12 @@ function synart(note) {
 
 
 $(document).keypress(function(event) {
-  var note = event.key
-  var song = document.getElementById('song').textContent;
-  song += " " + note;
-  $("#song").text(song);
+  if (playing) {
+    var note = event.key
+    var song = document.getElementById('song').textContent;
+    song += " " + note;
+    $("#song").text(song);
 
-  synart(note);
+    synart(note);
+  }
 });
