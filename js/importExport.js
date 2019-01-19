@@ -1,6 +1,3 @@
-function exportRecording() {
-  saveTextAsFile(recording);
-
 // ================ IMPORTING FUNCTIONS ====================
 function openAndPlayFile(event) {
     var input = event.target;
@@ -25,9 +22,11 @@ function playFile(text) {
 	}
 }
 
->>>>>>> upstream/master:js/importExport.js
-
 // ================ EXPORTING FUNCTIONS ====================
+function exportRecording() {
+  saveTextAsFile(recording);
+}
+
 //appends new note played to data string
 function updateRecording(note, time, data) {
 	data += (note + " " + time + "\n");
