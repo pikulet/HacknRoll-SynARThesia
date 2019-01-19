@@ -14,3 +14,26 @@ body {
 h1 {
   font-size: 32
 }
+
+table {
+  margin: 0 auto
+}
+
+canvas {
+  width: 800px;
+  border-style: solid;
+  border-width: medium;
+  border-color: grey;
+  background-color: black;
+}
+
+.sidebar {
+  padding-left: 20px;
+}
+
+.sidebar img {
+  width: 80px;
+  height: 80px;
+  margin: 20px 0px;
+  display: block
+}
