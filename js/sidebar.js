@@ -22,8 +22,8 @@ function refresh() {
   recording = "";
 }
 
-function settings() {
-  $("#test").text('settings');
+function importRecording() {
+  $("#test").text('import');
 }
 
 function exportImage() {
