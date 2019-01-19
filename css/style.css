@@ -6,6 +6,9 @@ body {
 
 .jumbotron {
   padding: 20px 40px;
+  background-color: black;
+  background-size: cover;
+  color: white
 }
 
 h1 {
