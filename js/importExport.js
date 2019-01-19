@@ -23,8 +23,24 @@ function playFile(text) {
 }
 
 // ================ EXPORTING FUNCTIONS ====================
-function exportRecording() {
+function exportData() {
   saveTextAsFile(recording);
+  exportImageAsPng();
+}
+
+function exportImageAsPng() {
+  var MIME_TYPE = "image/png";
+  var FILENAME = "mySynArt.png";
+
+  var imgURL = document.getElementById("canvas-id").toDataURL(MIME_TYPE);
+  var dlLink = document.createElement('a');
+  dlLink.href = imgURL;
+  dlLink.download = FILENAME;
+  dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
+
+  document.body.appendChild(dlLink);
+  dlLink.click();
+  document.body.removeChild(dlLink);
 }
 
 //appends new note played to data string
