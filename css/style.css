@@ -1,0 +1,13 @@
+body {
+  font-family: 'VT323', monospace;
+  background-image: url("../img/floral-bg.jpg");
+  background-size: cover
+}
+
+.jumbotron {
+  padding: 20px 40px;
+}
+
+h1 {
+  font-size: 32
+}
