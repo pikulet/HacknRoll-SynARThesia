@@ -1,4 +1,3 @@
-var playing = false;
 const play_pause_id = 'play-pause';
 const play_source = "img/play-button.png";
 const pause_source = "img/round-pause-button.png";
@@ -28,6 +27,5 @@ function settings() {
 }
 
 function exportImage() {
-  $("#test").text('export');
   saveTextAsFile(recording);
 }

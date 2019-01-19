@@ -1,8 +1,3 @@
-const note_map = generateNoteMap();
-$("h1#title").text("done");
-var startTime = Date.now();
-var recording = "";
-
 $(document).keypress(function(event) {
   if (playing) {
     var note = event.key
