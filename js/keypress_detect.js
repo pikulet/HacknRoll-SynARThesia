@@ -12,9 +12,36 @@ function generateNoteMap() {
 
 var note_map = generateNoteMap;
 
-function synart(note) {
-  note_map[note]
+function playNote(keycode) {
+	// insert algo here
 }
+function draw(rbgArray) {
+	//
+}
+
+
+function genRGB() {
+	var rgb = new Array(3);
+	for (var i = 0; i < 3; i++) {
+		rgb[i] = Math.floor(Math.random() * 255);
+		console.log(rgb[i]);
+	}
+
+	return rgb;
+}
+
+function synart(keycode) {
+  // note_map[note]
+
+  var colour = genRGB();
+  draw(colour);
+  playNote(keycode);
+
+  return colour;
+}
+
+
+
 
 $(document).keypress(function(event) {
   var note = event.key
