@@ -72,8 +72,3 @@ $(document).keypress(function(event) {
   }
 });
 
-
-// ================ EXPORTING FUNCTIONS ====================
-function exportRecording() {
-  saveTextAsFile(recording);
-}

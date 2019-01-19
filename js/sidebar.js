@@ -19,8 +19,10 @@ function settings() {
 
 function refresh() {
   $("#test").text('refresh');
+  recording = "";
 }
 
 function exportImage() {
   $("#test").text('export');
+  saveTextAsFile(recording);
 }
