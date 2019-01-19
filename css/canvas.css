@@ -4,11 +4,7 @@ table {
 
 canvas {
   width: 800px;
-  border-style: solid;
-  border-width: medium;
-  border-color: grey;
-  background-color: black;>
-
+  background-color: black;
 }
 
 .sidebar {

@@ -8,20 +8,16 @@ function genRGB() {
 }
 
 function synart(note, recording) {
-  // Play note
-  $("h1#title").text(note_map[note]);
-  playTone(note_map[note]);
-  paintSplat(note,'canvas_id');
+  // Update recording
+  var time = Date.now() - startTime;
+  recording = updateRecording(note_map[note], time, recording);
 
+  playTone(note_map[note]);
+  paintSplat(note, time);
 
   // Draw
   var colour = genRGB();
   document.getElementById('song').style.color = "rgb(" + colour.toString() + ")";
-  // draw(colour);
-
-  // Update recording
-  var time = Date.now() - startTime;
-  recording = updateRecording(note_map[note], time, recording);
 
   return recording;
 }

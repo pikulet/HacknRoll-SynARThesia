@@ -23,7 +23,6 @@
   <script src="js/keypressDetect.js"></script>
   <script src="js/main.js"></script>
 
-
 </head>
 
 <body>
@@ -31,16 +30,17 @@
     <h1>SynarThesia</h1>
     <p>At the crossroads of art and technology lies the explosive creativity of synthesia.</p>
   </div>
+
   <table>
     <tr>
-      <td id='canvas'>
-        <canvas id='canvas_id'></canvas>
+      <td id="canvas">
+        <canvas id="canvas-id"></canvas>
       </td>
       <td class="sidebar">
         <img id="play-pause" src="img/play-button.png" alt="play or pause" onclick="playPause();">
         <img src="img/refresh-button.png" alt="refresh" onclick="refresh();">
         <img src="img/import-button.png" alt="import" data-toggle="modal" data-target="#importModal">
-        <img src="img/export-button.png" alt="export song" onclick="exportRecording();">
+        <img src="img/export-button.png" alt="export song" onclick="exportData();">
       </td>
     </tr>
   </table>
@@ -63,9 +63,6 @@
 
   <h1 id="song">your song: </h1>
   <h1 id="test"> </h1>
-<script>
-  paintSplat('a','canvas_id');
-</script>
 </body>
 
 </html>
