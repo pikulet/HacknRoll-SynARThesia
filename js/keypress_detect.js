@@ -52,6 +52,7 @@ function synart(note, recording) {
   return recording;
 }
 
+recording = "";
 
 $(document).keypress(function(event) {
   if (playing) {
@@ -63,7 +64,6 @@ $(document).keypress(function(event) {
     if (note == '1') {
       //start timer
       startTime = Date.now();
-      recording = "";
     } else if (note == '2') {
       saveTextAsFile(recording);
     } else if (note in note_map) {
