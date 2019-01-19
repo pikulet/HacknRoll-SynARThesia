@@ -47,7 +47,6 @@ function synart(note, recording) {
   // Update recording
   var time = Date.now() - startTime;
   recording = updateRecording(note_map[note], time, recording);
-  console.log(recording);
 
   return recording;
 }
@@ -72,8 +71,3 @@ $(document).keypress(function(event) {
   }
 });
 
-
-// ================ EXPORTING FUNCTIONS ====================
-function exportRecording() {
-  saveTextAsFile(recording);
-}

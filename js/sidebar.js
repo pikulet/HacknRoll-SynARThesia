@@ -12,6 +12,7 @@ function playPause() {
   } else {
     img.src = pause_source;
     playing = true;
+    startTime = Date.now();
   }
 }
 
@@ -28,4 +29,5 @@ function settings() {
 
 function exportImage() {
   $("#test").text('export');
+  saveTextAsFile(recording);
 }

@@ -1,4 +1,31 @@
+function exportRecording() {
+  saveTextAsFile(recording);
 
+// ================ IMPORTING FUNCTIONS ====================
+function openAndPlayFile(event) {
+    var input = event.target;
+
+    var reader = new FileReader();
+    reader.onload = function(){
+      var text = reader.result;
+      // console.log(reader.result);
+      playFile(text);
+    };
+    reader.readAsText(input.files[0]);
+
+}
+
+function playFile(text) {
+	var notes = text.split('\n');
+	for (var i = 0; i < notes.length; i++) {
+		var note = notes[i].split(' ')[0];
+		var time = notes[i].split(' ')[1];
+
+		setTimeout((note) => playTone(note), time, note);
+	}
+}
+
+>>>>>>> upstream/master:js/importExport.js
 
 // ================ EXPORTING FUNCTIONS ====================
 //appends new note played to data string
@@ -33,4 +60,3 @@ function saveTextAsFile(data)
 
     downloadLink.click();
 }
-
