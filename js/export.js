@@ -1,3 +1,21 @@
+// ================ IMPORTING FUNCTIONS ====================
+function play(file) {
+	var reader = new FileReader();
+	var data = reader.readAsText(file);
+	console.log(data);
+}
+
+function openFile(event) {
+    var input = event.target;
+
+    var reader = new FileReader();
+    reader.onload = function(){
+      var text = reader.result;
+      console.log(reader.result.substring(0, 200));
+    };
+    reader.readAsText(input.files[0]);
+
+}
 
 
 // ================ EXPORTING FUNCTIONS ====================
