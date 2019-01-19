@@ -13,6 +13,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   <script src="js/keypress_detect.js"></script>
+  <script src="js/sidebar.js"></script>
   <script src="js/simpleTones.js"></script>
   <script src="js/export.js"></script>
 
@@ -30,15 +31,16 @@
         <canvas></canvas>
       </td>
       <td class="sidebar">
-        <img src="img/play-button.png">
-        <img src="img/round-pause-button.png">
-        <img src="img/stop-button.png">
-        <img src="img/export-button.png">
+        <img id="play" src="img/play-button.png" alt="play" onclick="play();">
+        <img src="img/stop-button.png" alt="stop" onclick="stop();">
+        <img src="img/refresh-button.png" alt="refresh" onclick="refresh();">
+        <img src="img/export-button.png" alt="export song" onclick="exportImage();">
       </td>
     </tr>
   </table>
 
   <h1 id="song">your song: </h1>
+  <h1 id="test"> </h1>
 </body>
 
 </html>
