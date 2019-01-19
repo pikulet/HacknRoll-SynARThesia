@@ -28,7 +28,6 @@ function draw(rbgArray) {
 }
 
 function synart(note) {
-  $("h1#title").text(note_map[note])
   playTone(note_map[note]);
 
   var colour = genRGB();
