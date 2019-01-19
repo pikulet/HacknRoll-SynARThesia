@@ -6,25 +6,32 @@ function playPause() {
   var img = document.getElementById(play_pause_id);
 
   if (playing) {
+    lastPauseStartTime = Date.now();
     img.src = play_source;
     playing = false;
   } else {
+    lastPauseDuration = Date.now() - lastPauseStartTime;
     img.src = pause_source;
     playing = true;
-    startTime = Date.now();
   }
 }
 
 function refresh() {
-  document.getElementById(play_pause_id).src = play_source;
-  playing = false;
+  var startTime = null;
+  var recording = "";
+  var playing = false;
+
+  var firstNotePlayed = false;
+
+  var lastPauseStartTime = null;
+  var lastPauseDuration = 0;
+
   $('#song').text('your song: ');
-  recording = "";
 }
 
 function importRecording() {
   $("#test").text('import');
-  
+
 }
 
 function exportImage() {
