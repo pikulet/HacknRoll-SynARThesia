@@ -1,19 +1,22 @@
 function generateNoteMap() {
   var letters = ['a', 's', 'd', 'f', 'h', 'j', 'k', 'l'];
-  var num = [1, 2, 3, 4, 5, 6, 7, 8];
+  var notes = ["C", "D", "E", "F", "G", "A", "B", "C4"];
 
   var note_map = {}
   letters.map(function(letter, index) {
-    note_map[letter] = num[index];
+    note_map[letter] = notes[index];
+    note_map[letter.toUpperCase()] = notes[index];
   });
 
   return note_map;
 }
 
-var note_map = generateNoteMap;
+var note_map = generateNoteMap();
+$("h1#title").text("done");
 
 function synart(note) {
-  note_map[note]
+  $("h1#title").text(note_map[note])
+  playTone(note_map[note]);
 }
 
 $(document).keypress(function(event) {
