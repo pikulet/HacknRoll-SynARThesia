@@ -14,3 +14,7 @@ body {
 h1 {
   font-size: 32
 }
+
+.modal {
+  margin-top: 240px
+}
