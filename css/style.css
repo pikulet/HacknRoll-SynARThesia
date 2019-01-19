@@ -15,10 +15,26 @@ h1 {
   font-size: 32
 }
 
+.main {
+  display: inline-block;
+  width: 900px;
+  margin: 0 auto;
+}
+
+.main * {
+  display: inline-block;
+  height: 400px;
+}
+
 canvas {
+  width: 800px;
   border-style: solid;
   border-width: medium;
   border-color: grey;
-  display: block;
-  margin: auto
+  background-color: black;
+  float: left;
+}
+
+.sidebar {
+  padding-left: 20px;
 }
