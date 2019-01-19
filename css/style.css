@@ -14,3 +14,11 @@ body {
 h1 {
   font-size: 32
 }
+
+canvas {
+  border-style: solid;
+  border-width: medium;
+  border-color: grey;
+  display: block;
+  margin: auto
+}
