@@ -10,6 +10,6 @@ function refresh() {
   $("#test").text('refresh');
 }
 
-function exort() {
-  $("#test").text('exort');
+function exportImage() {
+  $("#test").text('export');
 }
