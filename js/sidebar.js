@@ -1,9 +1,10 @@
-var playing = false;
+const play_pause_id = 'play-pause';
 const play_source = "img/play-button.png";
 const pause_source = "img/round-pause-button.png";
 
 function playPause() {
-  var img = document.getElementById('play-pause');
+  var img = document.getElementById(play_pause_id);
+
   if (playing) {
     img.src = play_source;
     playing = false;
@@ -14,16 +15,17 @@ function playPause() {
   }
 }
 
-function settings() {
-  $("#test").text('settings');
-}
-
 function refresh() {
-  $("#test").text('refresh');
+  document.getElementById(play_pause_id).src = play_source;
+  playing = false;
+  $('#song').text('your song: ');
   recording = "";
 }
 
+function importRecording() {
+  $("#test").text('import');
+}
+
 function exportImage() {
-  $("#test").text('export');
   saveTextAsFile(recording);
 }

@@ -22,8 +22,11 @@ function playFile(text) {
 	}
 }
 
-
 // ================ EXPORTING FUNCTIONS ====================
+function exportRecording() {
+  saveTextAsFile(recording);
+}
+
 //appends new note played to data string
 function updateRecording(note, time, data) {
 	data += (note + " " + time + "\n");
@@ -56,4 +59,3 @@ function saveTextAsFile(data)
 
     downloadLink.click();
 }
-
