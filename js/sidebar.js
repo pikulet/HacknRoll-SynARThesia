@@ -10,23 +10,19 @@ function playPause() {
     img.src = play_source;
     playing = false;
   } else {
-    lastPauseDuration = Date.now() - lastPauseStartTime;
+    lastPauseDuration = firstNotePlayed ? Date.now() - lastPauseStartTime : 0;
     img.src = pause_source;
     playing = true;
   }
 }
 
 function refresh() {
-  var startTime = null;
-  var recording = "";
-  var playing = false;
-
-  var firstNotePlayed = false;
-
-  var lastPauseStartTime = null;
-  var lastPauseDuration = 0;
+  recording = "";
+  playing = false;
+  firstNotePlayed = false;
 
   $('#song').text('your song: ');
+  document.getElementById('song').style.color = "black";
 }
 
 function importRecording() {
