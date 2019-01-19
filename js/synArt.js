@@ -11,6 +11,8 @@ function synart(note, recording) {
   // Play note
   $("h1#title").text(note_map[note]);
   playTone(note_map[note]);
+  paintSplat(note,'canvas_id');
+
 
   // Draw
   var colour = genRGB();
