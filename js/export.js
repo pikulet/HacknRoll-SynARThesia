@@ -1,3 +1,6 @@
+
+
+// ================ EXPORTING FUNCTIONS ====================
 //appends new note played to data string
 function updateRecording(note, time, data) {
 	data += (note + " " + time + "\n");
@@ -30,3 +33,4 @@ function saveTextAsFile(data)
 
     downloadLink.click();
 }
+

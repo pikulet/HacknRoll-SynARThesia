@@ -69,3 +69,11 @@ $(document).keypress(function(event) {
 	recording = synart(note, recording);
   }
 });
+
+
+// ================ EXPORTING FUNCTIONS ====================
+function exportRecording() {
+  saveTextAsFile(recording);
+}
+
+
