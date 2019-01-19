@@ -16,11 +16,13 @@
 
   <script src="js/simpleTones.js"></script>
   <script src="js/noteMap.js"></script>
+  <script src="js/painter.js"></script>
   <script src="js/synArt.js"></script>
   <script src="js/importExport.js"></script>
   <script src="js/sidebar.js"></script>
   <script src="js/keypressDetect.js"></script>
   <script src="js/main.js"></script>
+
 
 </head>
 
@@ -29,11 +31,10 @@
     <h1>SynarThesia</h1>
     <p>At the crossroads of art and technology lies the explosive creativity of synthesia.</p>
   </div>
-
   <table>
     <tr>
-      <td id=canvas>
-        <canvas></canvas>
+      <td id='canvas'>
+        <canvas id='canvas_id'></canvas>
       </td>
       <td class="sidebar">
         <img id="play-pause" src="img/play-button.png" alt="play or pause" onclick="playPause();">
@@ -46,6 +47,9 @@
 
   <h1 id="song">your song: </h1>
   <h1 id="test"> </h1>
+<script>
+  paintSplat('a','canvas_id');
+</script>
 </body>
 
 </html>
