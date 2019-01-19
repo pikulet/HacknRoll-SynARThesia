@@ -9,9 +9,9 @@ function randomize_y(){
 
 function paintSplat(letters,canvas) {
     letters = letters.toLowerCase();
-    var image_file_array = ['one_blob.png'];
-    //var note_value = (letters.charCodeAt()%10) ;
-    var image_source = "IMAGES/" + image_file_array[0];
+    var image_file_array = ['one_blob.png','bellpepperline.png','exclaiming_swirl','line.png','many_blobs.png','many_stars.png','one_star.png','one_vine.png','swirl.png,','two_vines.png'];
+    var note_value = (letters.charCodeAt()%10) ;
+    var image_source = "IMAGES/" + image_file_array[note_value];
     var canvas = document.getElementById(canvas);
     var context = canvas.getContext('2d');
     var imageObj = new Image();
