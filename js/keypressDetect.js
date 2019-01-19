@@ -5,12 +5,7 @@ $(document).keypress(function(event) {
     song += " " + note;
     $("#song").text(song);
 
-    if (note == '1') {
-      //start timer
-      startTime = Date.now();
-    } else if (note == '2') {
-      saveTextAsFile(recording);
-    } else if (note in note_map) {
+    if (note in note_map) {
       recording = synart(note, recording);
     }
   }

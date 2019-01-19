@@ -1,4 +1,11 @@
 // ================ IMPORTING FUNCTIONS ====================
+// $(document).on('files.bs.filedialog', function(ev) {
+//   var files_list = ev.files;
+//   // DO SOMETHING
+//   console.log("loaded");
+// });
+
+
 function openAndPlayFile(event) {
     var input = event.target;
 
@@ -23,10 +30,6 @@ function playFile(text) {
 }
 
 // ================ EXPORTING FUNCTIONS ====================
-function exportRecording() {
-  saveTextAsFile(recording);
-}
-
 //appends new note played to data string
 function updateRecording(note, time, data) {
 	data += (note + " " + time + "\n");

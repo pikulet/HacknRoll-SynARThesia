@@ -24,8 +24,9 @@ function refresh() {
 
 function importRecording() {
   $("#test").text('import');
+  $(document).FileDialog();
 }
 
-function exportImage() {
+function exportRecording() {
   saveTextAsFile(recording);
 }
