@@ -10,6 +10,7 @@ function playPause() {
   } else {
     img.src = pause_source;
     playing = true;
+    startTime = Date.now();
   }
 }
 

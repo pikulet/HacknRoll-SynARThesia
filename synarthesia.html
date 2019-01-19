@@ -17,7 +17,7 @@
   <script src="js/keypress_detect.js"></script>
   <script src="js/sidebar.js"></script>
   <script src="js/simpleTones.js"></script>
-  <script src="js/export.js"></script>
+  <script src="js/importExport.js"></script>
 
 </head>
 
@@ -33,7 +33,7 @@
         <canvas></canvas>
       </td>
       <td class="sidebar">
-      	<input type='file' accept='text/plain' onchange='openFile(event)'>
+      	<input type='file' accept='text/plain' onchange='openAndPlayFile(event)'>
         <img id="play-pause" src="img/play-button.png" alt="play or pause" onclick="playPause();">
         <img src="img/refresh-button.png" alt="refresh" onclick="refresh();">
         <img src="img/setting-button.png" alt="settings" onclick="settings();">
