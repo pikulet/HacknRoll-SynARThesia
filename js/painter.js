@@ -40,8 +40,6 @@ function paintSplat(letter, time) {
   imageObj.src = imgSrc;
   imageObj.onload = function() {
     var context = document.getElementById(canvas_id).getContext('2d');
-    console.log(imgX);
-    console.log(imgY);
     context.drawImage(imageObj, imgX, imgY, imgSize, imgSize);
   };
 };
@@ -50,4 +48,6 @@ function clearCanvas() {
   var canvas = document.getElementById(canvas_id)
   var context = canvas.getContext('2d');
   context.clearRect(0, 0, canvas.width, canvas.height);
+  context.fillStyle = "black";
+  context.fillRect(0, 0, canvas.width, canvas.height);
 }
