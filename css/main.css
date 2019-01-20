@@ -19,3 +19,13 @@ h1 {
 .modal {
   margin-top: 240px
 }
+
+#song-display {
+  padding: 0px 200px;
+}
+
+#song {
+  background-color: transparent;
+  height: 70px;;
+  overflow: auto;
+}
