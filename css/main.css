@@ -6,7 +6,8 @@ body {
 
 .jumbotron {
   padding: 20px 40px;
-  background-color: black;
+  /*background-color: black;*/
+  background-image: url("../img/watercolour_burst.jpg");
   background-size: cover;
   color: white
 }
