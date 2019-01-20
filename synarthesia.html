@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/canvas.css">
+  <link rel="stylesheet" href="css/dragAndDrop.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -26,6 +27,7 @@
 
   <script src="js/keypressDetect.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/dragAndDrop.js"></script>
 
 </head>
 
@@ -59,6 +61,13 @@
         </div>
         <div class="modal-body">
           <p>Some text in the modal.</p>
+        </div>
+        <div id="drop-zone" ondrop="filedrop(event)" ondragover="allowDrop(event)">
+          Drag and drop your playable txt file here...
+          <div id="clickHere">
+            or click here
+            <input type="file" name="file" id="file" accept='text/plain' onchange='openAndPlayFile(event)'/>
+          </div>
         </div>
       </div>
 

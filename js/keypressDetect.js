@@ -7,6 +7,12 @@ $(document).keypress(function(event) {
       startTime = Date.now();
     }
 
-    recording = synart(note, recording);
+    var song = document.getElementById('song').textContent;
+    song += " " + note;
+    $("#song").text(song);
+
+    if (note in note_map) {
+      recording = synart(note, recording);
+    }
   }
 });
