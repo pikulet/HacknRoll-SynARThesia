@@ -22,11 +22,10 @@ h1 {
 
 #song-display {
   padding: 0px 200px;
-  font-family: 'Quicksand'
 }
 
 #song {
   background-color: transparent;
-  height: 70px;;
+  height: 70px;
   overflow: auto
 }
