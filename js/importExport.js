@@ -13,12 +13,21 @@ function openAndPlayFile(event) {
 
 function playFile(text) {
   var notes = text.split('\n');
+  //check for invalid file
+  var note = notes[0].split(' ')[0];
+  if ((typeof note === 'string' || note instanceof String) && !(note in tone)) {
+    window.alert("This text file cannot be read. Upload a previous recording instead.");
+  }
+
   for (var i = 0; i < notes.length; i++) {
     var note = notes[i].split(' ')[0];
     var time = notes[i].split(' ')[1];
-    console.log(note, time);
+    if (note == undefined || note == null || note == " ") {
+      break;
+    }
 
     setTimeout((note) => synartForImport(note), time, note);
+
   }
 }
 
