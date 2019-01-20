@@ -1,29 +1,27 @@
 const canvas_id = "canvas-id";
 
-function randomize_x() {
-  return Math.floor(Math.random() * 800) - 50;
+function randomize_value(scale,transpose) {
+  return Math.floor(Math.random() * scale) - transpose;
 }
 
-function randomize_y() {
-  return Math.floor(Math.random() * 400) - 50;
-}
 
 function getImageSourceFromLetterAndTime(letter, time) {
-  var image_file_array = ['one_blob.png'];
-  //var note_value = (letters.charCodeAt()%10) ;
-  return "IMAGES/" + image_file_array[0];
+  //something is wrong with and one_vine
+  var image_file_array = ['one_blob.png','bellpepperline.png','exclaiming_swirl.png','line.png','many_blobs.png','many_stars.png','pencil_scratch.png','one_star.png','swirl.png','one_vine.png'];
+  var note_value = (letter.charCodeAt())%10;
+  return "IMAGES/" + image_file_array[note_value];
 }
 
 function getXFromLetterAndTime(letter, time) {
-  return randomize_x();
+  return randomize_value(350,50);
 }
 
 function getYFromLetterAndTime(letter, time) {
-  return randomize_y();
+  return randomize_value(450,50);
 }
 
 function getImageSizeFromLetterAndTime(letter, time) {
-  return 137;
+  return letter.charCodeAt() *randomize_value(5,0);
 }
 
 function paintSplat(letter, time) {
@@ -35,12 +33,12 @@ function paintSplat(letter, time) {
   var imgSize = getImageSizeFromLetterAndTime(letter, time);
 
   var imageObj = new Image();
+  imageObj.src = imgSrc;
   imageObj.onload = function() {
     var context = document.getElementById(canvas_id).getContext('2d');
-    context.drawImage(imageObj, imgX, imgY, 137, imgSize);
+    context.drawImage(imageObj, imgX, imgY, imgSize, imgSize);
   };
-  imageObj.src = imgSrc;
-}
+};
 
 function clearCanvas() {
   var canvas = document.getElementById(canvas_id)
