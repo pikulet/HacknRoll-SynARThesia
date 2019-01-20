@@ -7,10 +7,6 @@ $(document).keypress(function(event) {
       startTime = Date.now();
     }
 
-    var song = document.getElementById('song').textContent;
-    song += " " + note;
-    $("#song").text(song);
-
     recording = synart(note, recording);
   }
 });

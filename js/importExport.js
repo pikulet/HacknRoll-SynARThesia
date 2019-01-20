@@ -31,14 +31,7 @@ function exportData() {
 function exportImageAsPng() {
   var MIME_TYPE = "image/png";
   var imgURL = document.getElementById("canvas-id").toDataURL(MIME_TYPE);
-
   automaticallyDownload(imgURL, "mySynArt");
-}
-
-//appends new note played to data string
-function updateRecording(note, time, data) {
-  data += (note + " " + time + "\n");
-  return data
 }
 
 function exportRecordingAsText(data) {
