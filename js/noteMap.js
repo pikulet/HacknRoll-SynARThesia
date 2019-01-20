@@ -1,6 +1,6 @@
 function generateNoteMap() {
   var letters = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i',
-    'a', 's', 'd', 'f', 'h', 'j', 'k', 'l',
+    'a', 's', 'd', 'f', 'g', 'h', 'j', 'k',
     'z', 'x', 'c', 'v', 'b', 'n', 'm', ','
   ];
   var notes = [
