@@ -18,9 +18,24 @@ function playFile(text) {
     var time = notes[i].split(' ')[1];
     console.log(note, time);
 
-    setTimeout((note) => playTone(note), time, note);
+    setTimeout((note) => synartForImport(note), time, note);
   }
 }
+
+function synartForImport(note) {
+  var time = Date.now() - startTime - lastPauseDuration;
+
+  playTone(note);
+  paintSplat(note, time);
+
+  var song = document.getElementById('song').textContent;
+  song += " " + note;
+  $("#song").text(song);
+
+  var colour = genRGB();
+  document.getElementById('song').style.color = "rgb(" + colour.toString() + ")";
+}
+
 
 // ================ EXPORTING FUNCTIONS ====================
 function exportData() {
