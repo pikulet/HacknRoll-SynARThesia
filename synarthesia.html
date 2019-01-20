@@ -18,6 +18,7 @@
 
   <script src="js/simpleTones.js"></script>
   <script src="js/noteMap.js"></script>
+  <script src="js/painter.js"></script>
   <script src="js/synArt.js"></script>
   <script src="js/importExport.js"></script>
   <script src="js/sidebar.js"></script>
@@ -29,13 +30,13 @@
 <body>
   <div class="jumbotron">
     <h1>SynarThesia</h1>
-    <p>At the crossroads of art and technology lies the explosive creativity of synthesia.</p>
+    <p id='p1'>At the crossroads of art and technology lies the explosive creativity of synthesia.</p>
   </div>
 
   <table>
     <tr>
-      <td id=canvas>
-        <canvas></canvas>
+      <td id="canvas">
+        <canvas id="canvas-id"></canvas>
       </td>
       <div class="file-upload-wrapper">
       	<input type="file" id="input-file-now" class="file-upload" />
@@ -44,7 +45,7 @@
         <img id="play-pause" src="img/play-button.png" alt="play or pause" onclick="playPause();">
         <img src="img/refresh-button.png" alt="refresh" onclick="refresh();">
         <img src="img/import-button.png" alt="import" data-toggle="modal" data-target="#importModal">
-        <img src="img/export-button.png" alt="export song" onclick="exportRecording();">
+        <img src="img/export-button.png" alt="export song" onclick="exportData();">
       </td>
     </tr>
   </table>

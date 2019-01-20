@@ -30,6 +30,26 @@ function playFile(text) {
 }
 
 // ================ EXPORTING FUNCTIONS ====================
+function exportData() {
+  saveTextAsFile(recording);
+  exportImageAsPng();
+}
+
+function exportImageAsPng() {
+  var MIME_TYPE = "image/png";
+  var FILENAME = "mySynArt.png";
+
+  var imgURL = document.getElementById("canvas-id").toDataURL(MIME_TYPE);
+  var dlLink = document.createElement('a');
+  dlLink.href = imgURL;
+  dlLink.download = FILENAME;
+  dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
+
+  document.body.appendChild(dlLink);
+  dlLink.click();
+  document.body.removeChild(dlLink);
+}
+
 //appends new note played to data string
 function updateRecording(note, time, data) {
   data += (note + " " + time + "\n");
@@ -45,10 +65,10 @@ function saveTextAsFile(data) {
   var downloadLink = document.createElement("a");
   downloadLink.download = fileNameToSaveAs;
   downloadLink.innerHTML = "Download File";
-  if (window.webkitURL != null) {
+  if (window.URL != null) {
     // Chrome allows the link to be clicked
     // without actually adding it to the DOM.
-    downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+    downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
   } else {
     // Firefox requires the link to be added to the DOM
     // before it can be clicked.

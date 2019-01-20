@@ -6,20 +6,25 @@ function playPause() {
   var img = document.getElementById(play_pause_id);
 
   if (playing) {
+    lastPauseStartTime = Date.now();
     img.src = play_source;
     playing = false;
   } else {
+    lastPauseDuration = firstNotePlayed ? Date.now() - lastPauseStartTime : 0;
     img.src = pause_source;
     playing = true;
-    startTime = Date.now();
   }
 }
 
 function refresh() {
-  document.getElementById(play_pause_id).src = play_source;
-  playing = false;
-  $('#song').text('your song: ');
   recording = "";
+  playing = false;
+  firstNotePlayed = false;
+
+  clearCanvas();
+  
+  $('#song').text('your song: ');
+  document.getElementById('song').style.color = "black";
 }
 
 function importRecording() {
