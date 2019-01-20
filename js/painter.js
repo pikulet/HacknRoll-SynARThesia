@@ -22,7 +22,7 @@ function getXFromLetterAndTime(letter, time) {
 }
 
 function getYFromLetterAndTime(letter, time) {
-  return randomize_value(75,25);
+  return randomize_value(100,75);
 }
 
 function getImageSizeFromLetterAndTime(letter, time) {
