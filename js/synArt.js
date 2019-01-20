@@ -8,8 +8,9 @@ function genRGB() {
 }
 
 function synart(note, recording) {
+
   // Update recording
-  var time = Date.now() - startTime;
+  var time = Date.now() - startTime - lastPauseDuration;
   recording = updateRecording(note_map[note], time, recording);
 
   playTone(note_map[note]);

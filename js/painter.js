@@ -37,6 +37,11 @@ function paintSplat(letter, time) {
   imageObj.onload = function() {
     var context = document.getElementById(canvas_id).getContext('2d');
     context.drawImage(imageObj, imgX, imgY, imgSize, imgSize);
-
   };
 };
+
+function clearCanvas() {
+  var canvas = document.getElementById(canvas_id)
+  var context = canvas.getContext('2d');
+  context.clearRect(0, 0, canvas.width, canvas.height);
+}

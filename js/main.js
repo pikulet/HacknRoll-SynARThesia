@@ -1,4 +1,9 @@
 const note_map = generateNoteMap();
-var startTime = Date.now();
+
 var recording = "";
 var playing = false;
+var firstNotePlayed = false;
+
+var startTime;
+var lastPauseStartTime;
+var lastPauseDuration;

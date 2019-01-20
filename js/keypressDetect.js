@@ -1,17 +1,16 @@
 $(document).keypress(function(event) {
-  if (playing) {
-    var note = event.key
+  var note = event.key
+
+  if (playing && note in note_map) {
+    if (!firstNotePlayed) {
+      firstNotePlayed = true;
+      startTime = Date.now();
+    }
+
     var song = document.getElementById('song').textContent;
     song += " " + note;
     $("#song").text(song);
 
-    if (note == '1') {
-      //start timer
-      startTime = Date.now();
-    } else if (note == '2') {
-      saveTextAsFile(recording);
-    } else if (note in note_map) {
-      recording = synart(note, recording);
-    }
+    recording = synart(note, recording);
   }
 });
