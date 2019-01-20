@@ -4,8 +4,10 @@ function allowDrop(ev) {
 
 function filedrop(ev) {
   ev.preventDefault();
+  $('#importModal').modal('hide');
 
   var files = ev.dataTransfer.files;
+
   for (var i = 0, file; file = files[i]; i++) {
     openFile(file);
   }
@@ -13,7 +15,7 @@ function filedrop(ev) {
 
 function openFile(file) {
   var reader = new FileReader();
-  
+
   reader.onload = function() {
     var text = reader.result;
     console.log(text);
