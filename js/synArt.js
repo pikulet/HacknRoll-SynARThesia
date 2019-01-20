@@ -7,18 +7,26 @@ function genRGB() {
   return rgb;
 }
 
+// Appends new note played to data string
+function updateRecording(note, time, data) {
+  data += (note + " " + time + "\n");
+  return data;
+}
+
 function synart(note, recording) {
 
   // Update recording
   var time = Date.now() - startTime - lastPauseDuration;
-  recording = updateRecording(note_map[note], time, recording);
 
   playTone(note_map[note]);
   paintSplat(note, time);
 
+  var song = document.getElementById('song').textContent;
+  song += " " + note;
+  $("#song").text(song);
   // Draw
   var colour = genRGB();
   document.getElementById('song').style.color = "rgb(" + colour.toString() + ")";
 
-  return recording;
+  return updateRecording(note_map[note], time, recording);
 }
