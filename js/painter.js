@@ -14,7 +14,7 @@ function getImageSourceFromLetterAndTime(letter, time) {
     var value = randomize_value(10,4);
   }
   var index = note_value*6+ value;
-  return "IMAGES/" + image_file_array[index];
+  return "img/" + image_file_array[index];
 }
 
 function getXFromLetterAndTime(letter, time) {
