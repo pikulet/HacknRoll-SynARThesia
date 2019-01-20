@@ -24,22 +24,10 @@
   <script src="js/importExport.js"></script>
 
   <script src="js/sidebar.js"></script>
-  <script src="js/scroller.js"></script>
   <script src="js/keypressDetect.js"></script>
   <script src="js/main.js"></script>
   <script src="js/dragAndDrop.js"></script>
 
-  <style>
-  div.ex1 {
-    background-color: transparent;
-    width: 1500px;
-    height: 100px;;
-    overflow: auto;
-    display: flex;
-    flex-direction: column-reverse;
-    }
-  }
-  </style>
 </head>
 
 <body>
@@ -70,23 +58,21 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Import synArt</h4>
         </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
         <div id="drop-zone" ondrop="filedrop(event)" ondragover="allowDrop(event)">
           Drag and drop your playable txt file here...
           <div id="clickHere">
             or click here
-            <input type="file" name="file" id="file" accept='text/plain' onchange='openAndPlayFile(event)'/>
+            <input type="file" name="file" id="file" accept='text/plain' onchange='openAndPlayFile(event)' />
           </div>
         </div>
       </div>
 
     </div>
   </div>
-  <h1>Your song</h1>
-  <div class = 'ex1'>
-    <h1 id="song"></h1>
+
+  <div id="song-display">
+    <h3>Your song: </h3>
+    <h6 id="song"></h6>
   </div>
 </body>
 
