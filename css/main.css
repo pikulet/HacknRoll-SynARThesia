@@ -17,5 +17,16 @@ h1 {
 }
 
 .modal {
-  margin-top: 240px
+  margin-top: 180px
+}
+
+#song-display {
+  padding: 0px 200px;
+  font-family: 'Quicksand'
+}
+
+#song {
+  background-color: transparent;
+  height: 70px;;
+  overflow: auto
 }

@@ -1,3 +1,7 @@
+$(document).ready(function() {
+  clearCanvas();
+});
+
 const note_map = generateNoteMap();
 
 var recording = "";
