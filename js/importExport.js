@@ -24,7 +24,7 @@ function playFile(text) {
 
 // ================ EXPORTING FUNCTIONS ====================
 function exportData() {
-  saveTextAsFile(recording);
+  exportRecordingAsText(recording);
   exportImageAsPng();
 }
 
@@ -41,7 +41,7 @@ function updateRecording(note, time, data) {
   return data
 }
 
-function saveTextAsFile(data) {
+function exportRecordingAsText(data) {
   var textFileAsBlob = new Blob([data], {
     type: 'text/plain'
   });
