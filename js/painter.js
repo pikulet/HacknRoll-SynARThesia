@@ -18,11 +18,11 @@ function getImageSourceFromLetterAndTime(letter, time) {
 }
 
 function getXFromLetterAndTime(letter, time) {
-  return randomize_value(150,60);
+  return randomize_value(175,60);
 }
 
 function getYFromLetterAndTime(letter, time) {
-  return randomize_value(100,75);
+  return randomize_value(150,100);
 }
 
 function getImageSizeFromLetterAndTime(letter, time) {
