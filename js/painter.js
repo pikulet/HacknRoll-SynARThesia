@@ -40,8 +40,6 @@ function paintSplat(letter, time) {
   imageObj.src = imgSrc;
   imageObj.onload = function() {
     var context = document.getElementById(canvas_id).getContext('2d');
-    console.log(imgX);
-    console.log(imgY);
     context.drawImage(imageObj, imgX, imgY, imgSize, imgSize);
   };
 };
