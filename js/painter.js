@@ -1,24 +1,42 @@
+const canvas_id = "canvas-id";
 
-function randomize_x(){
-   return Math.floor(Math.random() * 800) - 50;
+function randomize_value(scale,transpose) {
+  return Math.floor(Math.random() * scale) - transpose;
 }
 
-function randomize_y(){
-   return Math.floor(Math.random() * 400) - 50;
+
+function getImageSourceFromLetterAndTime(letter, time) {
+  //something is wrong with and one_vine
+  var image_file_array = ['one_blob.png','bellpepperline.png','exclaiming_swirl.png','line.png','many_blobs.png','many_stars.png','pencil_scratch.png','one_star.png','swirl.png','one_vine.png'];
+  var note_value = (letter.charCodeAt())%10;
+  return "IMAGES/" + image_file_array[note_value];
 }
 
-function paintSplat(letters,canvas) {
-    letters = letters.toLowerCase();
-    var image_file_array = ['one_blob.png','bellpepperline.png','exclaiming_swirl','line.png','many_blobs.png','many_stars.png','one_star.png','one_vine.png','swirl.png,','two_vines.png'];
-    var note_value = (letters.charCodeAt()%10) ;
-    var image_source = "IMAGES/" + image_file_array[note_value];
-    var canvas = document.getElementById(canvas);
-    var context = canvas.getContext('2d');
-    var imageObj = new Image();
-    var x = randomize_x();
-    var y = randomize_y();
-    imageObj.onload = function() {
-      context.drawImage(imageObj,x,y, 137, 137);
-    };
-  imageObj.src = image_source;
+function getXFromLetterAndTime(letter, time) {
+  return randomize_value(350,50);
 }
+
+function getYFromLetterAndTime(letter, time) {
+  return randomize_value(450,50);
+}
+
+function getImageSizeFromLetterAndTime(letter, time) {
+  return letter.charCodeAt() *randomize_value(5,0);
+}
+
+function paintSplat(letter, time) {
+  letter = letter.toLowerCase();
+
+  var imgSrc = getImageSourceFromLetterAndTime(letter, time);
+  var imgX = getXFromLetterAndTime(letter, time);
+  var imgY = getYFromLetterAndTime(letter, time);
+  var imgSize = getImageSizeFromLetterAndTime(letter, time);
+
+  var imageObj = new Image();
+  imageObj.src = imgSrc;
+  imageObj.onload = function() {
+    var context = document.getElementById(canvas_id).getContext('2d');
+    context.drawImage(imageObj, imgX, imgY, imgSize, imgSize);
+
+  };
+};
