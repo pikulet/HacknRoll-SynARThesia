@@ -27,5 +27,7 @@ h1 {
 #song {
   background-color: transparent;
   height: 70px;
-  overflow: auto
+  overflow: auto;
+  display: flex;
+  flex-direction: column-reverse;
 }
